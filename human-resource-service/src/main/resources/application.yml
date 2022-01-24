@@ -6,6 +6,10 @@ spring:
                   instance:
                   preferIpAddress: true
       application:
-             name: hrms-service
+             name: HRMS-SERVICE
 Server:
       port: 8084
+feign:
+   okhttp:
+      enabled: true
+      
