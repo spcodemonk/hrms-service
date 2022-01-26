@@ -1,0 +1,28 @@
+---------------Kafka Commands-----------------------------------------------------
+I am supposing you have downloaded and extracted the kafka in your local at location - C:\Sharad\Kafka\kafka
+
+and below folder you can see in your local inside above path
+26-01-2022  02:08 PM    <DIR>          bin
+26-01-2022  02:08 PM    <DIR>          config
+26-01-2022  02:08 PM    <DIR>          libs
+12-01-2022  02:31 PM            14,536 LICENSE
+26-01-2022  02:08 PM    <DIR>          licenses
+26-01-2022  02:09 PM    <DIR>          logs
+12-01-2022  02:31 PM            28,184 NOTICE
+26-01-2022  02:08 PM    <DIR>          site-docs
+
+--run zookeeper---------
+.\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
+
+--run kafka---------------
+.\bin\windows\kafka-server-start.bat .\config\server.properties
+
+---topic created command ---- 
+.\bin\windows\kafka-topics.bat --create --topic test-topic --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1
+
+--producer command-------
+.\bin\windows\kafka-console-producer.bat --broker-list localhost:9092 --topic test-topic
+Hello World test
+
+--consumer command---------
+.\bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic test-topic --from-beginning
